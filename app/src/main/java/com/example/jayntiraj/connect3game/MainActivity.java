@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
             ImageView counter = (ImageView) view;
             counter.setTranslationY(-1500);
             if (activePlayer == 0) {
-                counter.setImageResource(R.drawable.yellow);
+                counter.setImageResource(R.drawable.o_new);
             } else {
-                counter.setImageResource(R.drawable.red);
+                counter.setImageResource(R.drawable.x_new);
             }
             counter.animate().translationYBy(1500).setDuration(300);
             if(checkForWin() || checkForFull()) {
@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
         if(horizontalWin(activePlayer) || verticalWin(activePlayer) || diagonalWin(activePlayer)) {
             TextView text = (TextView) findViewById(R.id.textView);
             if(activePlayer==1) {
-                text.setText("Red Wins!");
+                text.setText("X Wins!");
             } else {
-                text.setText("Yellow Wins!");
+                text.setText("O Wins!");
             }
             return true;
         }
