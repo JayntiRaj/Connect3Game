@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
         if(places[place]==2) {
             places[place]=activePlayer;
             ImageView counter = (ImageView) view;
-            counter.setTranslationY(-1500);
+            /*counter.setTranslationY(-1500);*/
             if (activePlayer == 0) {
                 counter.setImageResource(R.drawable.o_new);
             } else {
                 counter.setImageResource(R.drawable.x_new);
             }
-            counter.animate().translationYBy(1500).setDuration(300);
+            //counter.animate().translationYBy(1500).setDuration(300);
+            counter.animate().alpha(1).rotationBy(360).setDuration(500);
             if(checkForWin() || checkForFull()) {
                 endGame();
             }
